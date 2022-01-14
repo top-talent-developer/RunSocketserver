@@ -5,7 +5,7 @@ exports.connectDB = function () {
   var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "123456",
+    password: "Aa12_56CE#",
     database: "running",
   });
 
