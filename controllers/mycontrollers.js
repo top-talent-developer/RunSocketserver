@@ -44,10 +44,14 @@ controller.socketRegister = async (data, socketId) => {
         "SELECT * FROM users WHERE address = '" + address + "'"
     );
 
+    var userList = await db.query(
+        "SELECT * FROM users "
+    );
+    var rate = userList.length + 1;
     console.log(result)
     if (result.length == 0) {
         await db.query(
-            "INSERT INTO users (address,nickname) VALUES ('" + address + "','" + nickname + "')"
+            "INSERT INTO users (address,nickname, rate) VALUES ('" + address + "','" + nickname + "','" + rate + "')"
         );
 
         var result = await db.query(
@@ -191,7 +195,7 @@ controller.addHistory = async (data) => {
     }
 }
 
-controller.getHistories = async () =>{
+controller.getHistories = async () => {
     const db = global.db;
     var results = await db.query(
         "SELECT * FROM transactions"
