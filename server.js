@@ -33,15 +33,14 @@ app.options("/*", function (req, res, next) {
     res.send(200);
 });
 
+app.use("/api", router);
+
 const frontEndPath = __dirname + "/../Run_dog_frontend/build";
 app.use(express.static(frontEndPath));
 app.get('/*', (req, res)=>{
     const html = fs.readFileSync(frontEndPath + '/index.html').toString('utf8')
     res.send(html);
 });
-
-app.use("/api", router);
-
 const { connectDB } = require("./db");
 db = connectDB();
 
