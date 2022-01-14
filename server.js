@@ -36,11 +36,7 @@ app.options("/*", function (req, res, next) {
 app.use("/api", router);
 
 const frontEndPath = __dirname + "/../Run_dog_frontend/build";
-app.use(express.static(frontEndPath));
-app.get('/*', (req, res)=>{
-    const html = fs.readFileSync(frontEndPath + '/index.html').toString('utf8')
-    res.send(html);
-});
+
 const { connectDB } = require("./db");
 db = connectDB();
 
@@ -162,4 +158,9 @@ gameSocket = io.on("connection", (socket) => {
     });
 });
 
+app.use(express.static(frontEndPath));
+app.get('/*', (req, res)=>{
+    const html = fs.readFileSync(frontEndPath + '/index.html').toString('utf8')
+    res.send(html);
+});
 server.listen(80, () => console.log(`Server running on port ${80}`));
