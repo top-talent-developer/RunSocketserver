@@ -16,12 +16,7 @@ app.use(express.static('public'));
 app.use(cors({
     origin: '*'
 }));
-const frontEndPath = __dirname + "/../Run_dog_frontend/build";
-app.use(express.static(frontEndPath));
-app.get('/', (req, res)=>{
-    const html = fs.readFileSync(frontEndPath + '/index.html').toString('utf8')
-    res.send(html);
-});
+
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -36,6 +31,13 @@ app.options("/*", function (req, res, next) {
         "Content-Type, Authorization, Content-Length, X-Requested-With"
     );
     res.send(200);
+});
+
+const frontEndPath = __dirname + "/../Run_dog_frontend/build";
+app.use(express.static(frontEndPath));
+app.get('/*', (req, res)=>{
+    const html = fs.readFileSync(frontEndPath + '/index.html').toString('utf8')
+    res.send(html);
 });
 
 app.use("/api", router);
