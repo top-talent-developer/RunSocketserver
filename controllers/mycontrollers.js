@@ -163,7 +163,7 @@ controller.emit = (socket) => {
 controller.getScores = async () => {
     const db = global.db;
     var result = await db.query(
-        "SELECT nickname,coin,address FROM users ORDER BY coin DESC"
+        "SELECT nickname,coin,address, rate FROM users ORDER BY coin DESC"
     );
     if (result.length == 0) throw new Error("Invalid user");
 
