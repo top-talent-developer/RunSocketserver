@@ -161,4 +161,4 @@ gameSocket = io.on("connection", (socket) => {
     });
 });
 
-server.listen(5000, () => console.log(`Server running on port ${80}`));
+server.listen(80, () => console.log(`Server running on port ${80}`));
