@@ -1,6 +1,6 @@
 {
     "rundogToken": {
-        "address": "0xFE0165aE280C154Bf46f44Bf6349419b6E29f7b1",
+        "address": "0xd20d19Cd3A05233b97bf399a3E8E2E28efb811C5",
         "abi": [
             {
                 "inputs": [
@@ -636,7 +636,7 @@
         ]
     },
     "store": {
-        "address": "0x0E7D601CEb97C5E0278f2448fE45FF9FfE2d779F",
+        "address": "0x3728dCA9D3fCD60FD65d2ac8482eFF60f9bd9409",
         "abi": [
             {
                 "inputs": [],
@@ -839,7 +839,7 @@
         ]
     },
     "presale": {
-        "address": "0x7a1aC92158cB7F5F416c1F73561E1d232A319a95",
+        "address": "0x9083C031Db24F0423Caf38E148fBE3721839BA60",
         "abi": [
             {
                 "inputs": [
